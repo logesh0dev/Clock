@@ -1,0 +1,167 @@
+.App {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  transform: all 0.5s;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 0.1s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  width: 305px;
+  height: 305px;
+  border-radius: 50%;
+  background-color: black;
+  border: 5px solid white;
+
+
+  animation-name: divglow;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+
+}
+
+
+
+.clock_numbers>li {
+  position: absolute;
+  padding: 13px;
+  list-style: none;
+  inset: 10px;
+  transform: rotate(calc(30deg * var(--i)));
+  text-align: center;
+  color: #fff;
+  /* text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff; */
+  /* font-family: "Sacramento", Bold; */
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+
+}
+
+.minute {
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  border-radius: 10px;
+  transform: rotate(calc((6deg * var(--min)) - 90deg));
+}
+
+.hour {
+  position: absolute;
+  width: 90px;
+  height: 3px;
+  background-color: rgb(255, 147, 147);
+  top: 50%;
+  left: 50%;
+  transform-origin: left;
+  transform: rotate(calc((1deg * var(--hour))));
+  border-radius: 10px;
+  z-index: 9999;
+
+}
+
+.second {
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background-color: gray;
+  top: 50%;
+  left: 50%;
+  transform: rotate(calc((6deg * var(--sec)) - 90deg));
+  transform-origin: left;
+  border-radius: 10px;
+  /* transition: all 0.5s; */
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0px 0px 5px #fff, 0px 0px 5px #614ad3;
+  }
+
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;
+
+  }
+}
+
+@keyframes div {
+  from {
+    box-shadow: inset 0 0 25px #f0f,
+      inset 5px 0 40px #00ffff,
+      inset -5px 0 40px #f0f,
+      inset 5px 0 150px #0ff,
+      inset -5px 0 150px #f0f,
+      0 0 25px #f0f,
+      -5px 0 40px #fff,
+      5px 0 40px #f0f;
+  }
+
+  to {
+    box-shadow:
+      inset 0 0 50px #fff,
+      inset 20px 0 80px #f0f,
+      inset -20px 0 80px #0ff,
+      inset 20px 0 300px #f0f,
+      inset -20px 0 300px #0ff,
+      0 0 50px #f0f,
+      -10px 0 80px #f0f,
+      10px 0 80px #0ff;
+  }
+}
