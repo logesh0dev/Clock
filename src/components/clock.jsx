@@ -16,7 +16,7 @@ function Clock(){
       setmin(date.getMinutes());
       sethour((30 * date.getHours()) - 90 + Math.floor(date.getMinutes() / 2));
       setsec(date.getSeconds() );
-      // console.log( hour+"h",minutes+'m',second+'s',(30 *date.getHours()) - 90 + Math.floor(date.getMinutes()/2),5*second+'deg seconds' )
+      console.log( hour+"h",minutes+'m',second+'s',(30 *date.getHours()) - 90 + Math.floor(date.getMinutes()/2),5*second+'deg seconds' )
     }, 1000)
 
   });
